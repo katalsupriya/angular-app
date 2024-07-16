@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-7 mx-auto">
+      <form class="border p-5 rounded shadow border-primary" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="mb-3">
+          <label class="form-label text-primary fw-bold">Email address</label>
+          <input type="email" class="form-control" formControlName="user">
+          <div class="form-text text-danger" *ngIf="user && user.invalid">this email is invalid</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-primary fw-bold">Password</label>
+          <input type="password" class="form-control" formControlName="password">
+          <div class="form-text text-danger" *ngIf="password && password.invalid">this password is invalid</div>
+        </div>
+        <button type="submit" class="btn btn-primary text-light" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a routerLink="">Home</a><br>
+      <a routerLink="about">About</a><br>
+      <a routerLink="contact">Contact</a><br>
+      <a routerLink="practise">practise</a><br><br>
+
+      <a routerLink="about/10">Chirag</a><br>
+      <a routerLink="about/20">Ankit</a><br>
+      <a routerLink="about/30">Raman</a><br>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

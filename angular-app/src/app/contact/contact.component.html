@@ -1,0 +1,12 @@
+<input type="text" name="username" placeholder="enter name" #box />
+<button (click)="getValue(box.value)" >click</button>
+<p>
+  this input  value is:  {{displayVal}}
+</p>
+
+<br><br>
+<br><br>
+
+<app-child [item]='childData' ></app-child>
+<br><br>
+<button (click)="updateChild()" >update child value</button>

@@ -1,0 +1,47 @@
+<button (click)="getClick('chirag','bansal')" >Click me</button>
+<h1>
+    Hello my name is {{ displayVal }} {{ displayValue }}
+</h1>
+
+<!-- switch case -->
+<h3>{{ switchtitle }}</h3>
+<div [ngSwitch]="color" >
+    <h1 *ngSwitchCase="'red'" style="color: red;" >Red color</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;" >Green color</h1>
+    <h1 *ngSwitchCase="'yellow'" style="color: yellow;" >Yellow color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;" >Blue color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color: orange;" >Orange color</h1>
+</div>
+
+<!-- for loop -->
+<h3>{{ looptitle }}</h3>
+<h3 *ngFor="let item of users" >{{ item.name }} -- {{ item.email }} -- {{ item.age }}</h3>
+
+<!-- nested loop -->
+<h3>{{ nestloop }}</h3>
+<ul *ngFor="let user of userItem">
+    <li>{{ user.name }}</li>
+    <ul *ngFor="let account of user.socilaMedia">
+        <li>{{ account }}</li>
+    </ul>
+</ul>
+
+<!-- style binding -->
+<h1 [style.color]="colors" >Hello world!</h1>
+<button (click)="colorChange()" >color update</button><br><br><br><br>
+
+<!-- toggle functionality -->
+<h1 *ngIf="display" style="color: red;" >Hello Anglar click to below button and see the magic</h1>
+<button (click)="toggleMagic()" >See a Magic</button><br><br><br>
+
+<!-- todo list -->
+<input type="text" placeholder="enter task" #task />
+<br><br>
+<button (click)="addTask(task.value)" >Add Task</button>
+<br><br>
+<ul *ngFor="let item of list">
+    <li>
+        {{ item.name }}
+        <button (click)="removeTask(item.id)" >remove</button>
+    </li>
+</ul>
